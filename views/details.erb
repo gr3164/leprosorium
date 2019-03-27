@@ -10,9 +10,23 @@
 </p>
 <br>
 <h4>Коментарий:</h4>
+<br>
 
-<form action="/details/<%= @row['id'] %>" method="POST" >
-	<textarea name="content" class="form-control" rows="6" placeholder="Введите текст"></textarea>
-	<br>
-	<button type="submit" class="btn btn-primary">Добавить коментарий</button>
-</form>
+<% @comments.each do |comment| %>
+	<p>
+		<%= comment['content'] %>
+		<br>
+		<br>
+		<span style="font-size: 75%; color: #999">Добавлен в: <%= comment['created_date'] %></span>
+	</p>
+	<hr>
+<% end %>
+
+
+<p>
+	<form action="/details/<%= @row['id'] %>" method="POST" >
+		<textarea name="content" class="form-control" rows="6" placeholder="Введите текст"></textarea>
+		<br>
+		<button type="submit" class="btn btn-primary">Добавить коментарий</button>
+	</form>
+</p>	
