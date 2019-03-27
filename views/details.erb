@@ -8,3 +8,11 @@
 	Добавлен в: <%= @row['created_date'] %>
 		
 </p>
+<br>
+<h4>Коментарий:</h4>
+
+<form action="/details/<%= @row['id'] %>" method="POST" >
+	<textarea name="content" class="form-control" rows="6" placeholder="Введите текст"></textarea>
+	<br>
+	<button type="submit" class="btn btn-primary">Добавить коментарий</button>
+</form>
